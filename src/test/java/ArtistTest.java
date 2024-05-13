@@ -16,8 +16,4 @@ public class ArtistTest {
     public void artistHasName(){
         assertThat(artist.getName()).isEqualTo("Gaudi");
     }
-
-
-
-
 }

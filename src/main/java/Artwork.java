@@ -4,6 +4,7 @@ public class Artwork {
     private Artist artist;
     private double price;
 
+    // Constructor to create piece of artwork and assign a title, artist and price to the object
     public Artwork(String title, Artist artist, double price) {
         this.title = title;
         this.artist = artist;

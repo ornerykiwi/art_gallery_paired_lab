@@ -21,25 +21,25 @@ public class CustomerTest {
 
     @Test
     public void canBuyArtwork() {
-        customer.buyArtwork(gallery.checkStock(artwork), gallery);
+        customer.buyArtwork(gallery.getArtWork(artwork), gallery);
         assertThat(customer.getWallet()).isEqualTo(10);
     }
 
     @Test
     public void canDepositToTill() {
-        customer.buyArtwork(gallery.checkStock(artwork), gallery);
+        customer.buyArtwork(gallery.getArtWork(artwork), gallery);
         assertThat(gallery.getMoney()).isEqualTo(90);
     }
 
     @Test
     public void transferToArtCollection(){
-        customer.buyArtwork(gallery.checkStock(artwork), gallery);
+        customer.buyArtwork(gallery.getArtWork(artwork), gallery);
         assertThat(customer.checkArtCollection(artwork)).isEqualTo(true);
     }
 
     @Test
     public void removeFromGalleryStock(){
-        customer.buyArtwork(gallery.checkStock(artwork), gallery);
+        customer.buyArtwork(gallery.getArtWork(artwork), gallery);
         assertThat(gallery.checkStock(artwork)).isEqualTo(null);
     }
 

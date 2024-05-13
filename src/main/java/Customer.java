@@ -20,23 +20,29 @@ public class Customer {
         return wallet;
     }
 
+    // Reduces wallet amount by the price of the artwork
     public void reduceWallet(double artworkPrice) {
         wallet -= artworkPrice;
     }
 
-    public void setArtCollection(Artwork artwork){
+    // Adds the artwork to the customers own art collection
+    public void setArtCollection(Artwork artwork) {
         artCollection.add(artwork);
-    } //adds artwork to art collection
+    }
 
-    public boolean checkArtCollection(Artwork artwork){
+    // Check the customers art collection to see if they actually have the artwork in their collection
+    public boolean checkArtCollection(Artwork artwork) {
         if (artCollection.contains(artwork)){
             return true;
         }
         return false;
     }
 
-    // Takes the artwork object and retrieves the price, which will be taken away from the wallet total
+    // Firstly checks to see if the customer can afford the artwork, by checking if the wallet - artwork is greater than zero.
+    // Then reduces the wallet amount by the artwork price, if above condition is true.
     // Will then add the price of the artwork to the gallery's till using gallery object
+    // Artwork will then be added to the customers own art collection
+    // Artwork will be removed from Gallery's stock
     public void buyArtwork(Artwork artwork, Gallery gallery) {
         if(!((wallet - artwork.getPrice()) <= 0)) {
             reduceWallet(artwork.getPrice());

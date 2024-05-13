@@ -24,16 +24,22 @@ public class GalleryTest {
     }
 
     @Test
-    public void checkStockHasBeenAdded(){
+    public void checkStockHasBeenAdded() {
         gallery.setArtwork(piece1);
         gallery.setArtwork(piece2);
         assertThat(gallery.getStockSize()).isEqualTo(2);
     }
     @Test
-    public void checkIfMoneyAdded(){
+    public void checkIfMoneyAdded() {
         gallery.addMoney(10);
         assertThat(gallery.getMoney()).isEqualTo(10);
     }
 
+    @Test
+    public void checkStockTotal() {
+        gallery.setArtwork(piece1);
+        gallery.setArtwork(piece2);
+        assertThat(gallery.stockTake()).isEqualTo(15100);
+    }
 
 }

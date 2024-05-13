@@ -17,13 +17,15 @@ public class Customer {
     }
 
     public void reduceWallet(double artworkPrice) {
-        if(!((wallet - artworkPrice) <= 0)) {
-            wallet -= artworkPrice;
-        }
+        wallet -= artworkPrice;
     }
 
-    // Takes the artwork object and retrieves the price, which will minused from the wallet total
-    public void buyArtwork(Artwork artwork) {
-        reduceWallet(artwork.getPrice());
+    // Takes the artwork object and retrieves the price, which will be taken away from the wallet total
+    // Will then add the price of the artwork to the gallery's till using gallery object
+    public void buyArtwork(Artwork artwork, Gallery gallery) {
+        if(!((wallet - artwork.getPrice()) <= 0)) {
+            reduceWallet(artwork.getPrice());
+            gallery.addMoney(artwork.getPrice());
+        }
     }
 }

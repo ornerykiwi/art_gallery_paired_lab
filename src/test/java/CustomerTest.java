@@ -21,14 +21,13 @@ public class CustomerTest {
 
     @Test
     public void canBuyArtwork() {
-        customer.buyArtwork(gallery.checkStock(artwork));
+        customer.buyArtwork(gallery.checkStock(artwork), gallery);
         assertThat(customer.getWallet()).isEqualTo(10);
     }
 
     @Test
     public void canDepositToTill() {
-        customer.buyArtwork(gallery.checkStock(artwork));
-        gallery.addMoney(artwork.getPrice());
+        customer.buyArtwork(gallery.checkStock(artwork), gallery);
         assertThat(gallery.getMoney()).isEqualTo(90);
     }
 

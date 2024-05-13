@@ -31,4 +31,16 @@ public class CustomerTest {
         assertThat(gallery.getMoney()).isEqualTo(90);
     }
 
+    @Test
+    public void transferToArtCollection(){
+        customer.buyArtwork(gallery.checkStock(artwork), gallery);
+        assertThat(customer.checkArtCollection(artwork)).isEqualTo(true);
+    }
+
+    @Test
+    public void removeFromGalleryStock(){
+        customer.buyArtwork(gallery.checkStock(artwork), gallery);
+        assertThat(gallery.checkStock(artwork)).isEqualTo(null);
+    }
+
 }

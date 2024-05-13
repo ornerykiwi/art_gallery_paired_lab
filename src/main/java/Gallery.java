@@ -43,5 +43,10 @@ public class Gallery {
         return null;
     }
 
+    public void stockRemoved(Artwork artwork){
+        stock.remove(checkStock(artwork)); //checks to see if artwork is in stock then is able to remove
+        //it
+    }
+
 
 }

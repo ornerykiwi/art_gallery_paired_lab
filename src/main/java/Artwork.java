@@ -1,12 +1,12 @@
 public class Artwork {
 
     private String title;
-    private String artist;
+    private Artist artist;
     private double price;
 
     public Artwork(String title, Artist artist, double price) {
         this.title = title;
-        this.artist = artist.getName();
+        this.artist = artist;
         this.price = price;
     }
 
@@ -14,7 +14,7 @@ public class Artwork {
         return title;
     }
 
-    public String getArtist() {
+    public Artist getArtist() {
         return artist;
     }
 

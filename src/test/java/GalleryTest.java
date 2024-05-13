@@ -35,6 +35,4 @@ public class GalleryTest {
         assertThat(gallery.getMoney()).isEqualTo(10);
     }
 
-
-
 }

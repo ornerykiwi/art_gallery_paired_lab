@@ -26,12 +26,21 @@ public class Gallery {
         return stock.size();
     }
 
-    public void addMoney(int amount){
+    public void addMoney(double amount){
         till += amount;
     }
 
     public double getMoney(){
         return till;
+    }
+
+    // Check if artwork is in stock, if true return the object
+    public Artwork checkStock(Artwork artwork) {
+        if (stock.contains(artwork)) {
+            return artwork;
+        }
+        System.out.println("Artwork not in stock");
+        return null;
     }
 
 

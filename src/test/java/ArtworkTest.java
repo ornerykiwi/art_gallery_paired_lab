@@ -21,7 +21,8 @@ public class ArtworkTest {
 
     @Test
     public void getArtist() {
-        assertThat(artwork.getArtist()).isEqualTo("Gaudi");
+        Artist testArtist = artwork.getArtist();
+        assertThat(testArtist.getName()).isEqualTo("Gaudi");
     }
 
     @Test
